@@ -1,0 +1,31 @@
+<a routerLink="/employees" class="link">Employees List</a>
+<a routerLink="/addEmployee" class="link">Add Employee</a>
+<h2>Add Employee</h2>
+<table>
+    <tr>
+        <td><label>Employee name:</label></td>
+        <td><input #name type="text" id="name" maxlength="30"/></td>
+    </tr>
+    <tr>
+        <td><label>City:</label></td>
+        <td> <select #location id="location" >
+                <option *ngFor = 'let city of cities' [value]='city'>{{ city }}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Email:</label></td>
+        <td><input type="email" #email id="email" maxlength="30"></td>
+    </tr>
+    <tr>
+        <td><label>Mobile:</label></td>
+        <td><input type="number" size="10" maxlength="10" #mobile id="mobile"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button (click)='addEmployee([name.value, location.value, email.value, mobile.value])' id="Submit">Add</button></td>
+    </tr>
+    
+</table>
+
+<a routerLink="/employees">Go back</a>

@@ -1,0 +1,30 @@
+<a routerLink="/employees" class="link">Employees List</a>
+<a routerLink="/addEmployee" class="link">Add Employee</a><br>
+  <label >Filter:</label><br>
+  <input type="text" (keyup)="searchEmployee(filter.value)" #filter>
+  <br>
+  <br>
+  <label>Total number of employees are</label><label id="count"> {{employees.length}}</label>
+  <table>
+     <tr>
+        <th>Emp Id</th>
+        <th>Name</th>
+        <th>location</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let e of employees">
+        <td><a routerLink='/details/{{e.id}}'>{{ e.id }}</a></td>
+        <td id="name{{e.id}}">{{ e.name }}</td>
+        <td id="loc{{e.id}}">{{ e.location }}</td>
+        <td id="email{{e.id}}">{{ e.email }}</td>
+        <td id="mob{{e.id}}">{{ e.mobile }}</td>
+        <td><button (click)=edit([e.id])>Edit{{e.id}}</button></td>
+        <td><button (click)="delete(e)">Delete{{e.id}}</button></td>
+    <tr>
+    </table>
+
+    <a routerLink="/">Go back</a>
+  

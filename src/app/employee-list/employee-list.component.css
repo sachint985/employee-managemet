@@ -1,0 +1,13 @@
+table, th, td { 
+    border: 2px solid black; 
+    text-align:center; 
+} 
+th, td { 
+    padding: 10px; 
+    background-color:none; 
+} 
+.link{
+	font-size: 23px;
+	padding: 10px;
+	
+}
